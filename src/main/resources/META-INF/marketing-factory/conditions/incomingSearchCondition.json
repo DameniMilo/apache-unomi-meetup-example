@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "id": "incomingSearchCondition",
+    "name": "incomingSearchCondition",
+    "description": "",
+    "tags": [
+      "event",
+      "eventCondition",
+      "usableInPastEventCondition"
+    ],
+    "readOnly": true
+  },
+  "parentCondition": {
+    "type": "booleanCondition",
+    "parameterValues": {
+      "subConditions": [
+        {
+          "type": "eventTypeCondition",
+          "parameterValues": {
+            "eventTypeId": "viewFromReferrer"
+          }
+        },
+        {
+          "type": "eventPropertyCondition",
+          "parameterValues": {
+            "propertyName": "target.properties.pageInfo.referrerQuery",
+            "propertyValue": "parameter::searchedTerm",
+            "comparisonOperator": "parameter::comparisonOperator"
+          }
+        }
+      ],
+      "operator": "and"
+    }
+  },
+
+  "parameters": [
+    {
+      "id": "searchedTerm",
+      "type": "string",
+      "multivalued": false
+    },
+    {
+      "id": "comparisonOperator",
+      "type": "comparisonOperator",
+      "multivalued": false
+    }
+  ]
+}

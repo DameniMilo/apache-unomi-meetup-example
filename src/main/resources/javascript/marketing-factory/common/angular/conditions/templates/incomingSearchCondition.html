@@ -1,0 +1,13 @@
+<div class="perso clearfix" ng-form="incomingSearchForm_{{level}}_{{parentIndex}}">
+    <div class="block clearfix form-inline" ng-controller="IncomingSearchConditionController">
+
+        <label message-key="condition.incomingSearchCondition.label.comparisonOperator"></label>
+        <select class="form-control" ng-model="ref.parameterValues.comparisonOperator"
+                ng-options="parameter.id as parameter.name | translate for parameter in comparisonOperators"
+                required >
+        </select>
+
+        <label message-key="condition.incomingSearchCondition.label.searchedTerm"></label>
+        <input name="searchedTerm" ng-model="ref.parameterValues.searchedTerm" class="form-control" type="text" required/>
+    </div>
+</div>

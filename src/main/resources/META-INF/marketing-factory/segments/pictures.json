@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "id": "pictures",
+    "name": "Pictures",
+    "scope": "systemscope",
+    "description": "This segment show users with a picture",
+    "readOnly":true
+  },
+  "condition": {
+    "parameterValues": {
+      "propertyName": "properties.profilePictureUrl",
+      "comparisonOperator": "exists"
+    },
+    "type": "profilePropertyCondition"
+  }
+}
